@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ShareLab — Paciente (P2P)</title>
+<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:16px;max-width:980px}.row{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}input[type=file],button{padding:.5rem .7rem;border:1px solid #bbb;border-radius:8px;background:#fff}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#fafafa;border:1px solid #eee;padding:12px;border-radius:8px}.muted{color:#555;font-size:.95em}.cards{display:grid;gap:12px;grid-template-columns:1fr 1fr}@media (max-width:980px){.cards{grid-template-columns:1fr}}.card{border:1px solid #e6e6e6;border-radius:12px;padding:12px;background:#fff}h2{margin:.2rem 0 .6rem}code.badge{font-size:1rem;padding:.15rem .45rem;border:1px solid #ccc;border-radius:6px;background:#f4f4f4}</style></head>
+<body><h1>ShareLab — Paciente</h1><p class="muted">Processamento local do PDF + envio por P2P (WebRTC). Nada de servidor de dados.</p>
+<div class="row" style="margin-bottom:8px;"><input id="pdfInput" type="file" accept="application/pdf"><button id="btnLimpar">Limpar</button><span class="muted">Máx. 30 páginas no MVP.</span></div>
+<div class="row" style="margin:10px 0;"><strong>Código:</strong> <code id="code" class="badge">—</code><button id="btnNovoCodigo">Novo código</button><button id="btnConectar">Conectar &amp; Enviar</button><span id="status" class="muted"></span></div>
+<div class="cards"><div class="card"><h2>Texto extraído</h2><pre id="outText">—</pre></div><div class="card"><h2>JSON</h2><pre id="outJSON">—</pre></div></div>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script type="module" src="js/pages/paciente.js"></script></body></html>

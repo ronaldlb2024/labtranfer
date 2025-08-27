@@ -1,0 +1,2 @@
+export function newCode(){return String(Math.floor(1000+Math.random()*9000));}
+export function isValid(code){return /^\d{4}$/.test(String(code||'').trim());}
