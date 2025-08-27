@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ShareLab — Paciente (MVP offline)</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 16px; max-width: 900px; }
+      .row { display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; }
+      input[type=file],button { padding: .5rem .7rem; border: 1px solid #bbb; border-radius: 8px; background: #fff; }
+      pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #fafafa; border: 1px solid #eee; padding: 12px; border-radius: 8px; }
+      .muted { color:#555; font-size:.95em; }
+      .cards { display:grid; gap:12px; grid-template-columns: 1fr 1fr; }
+      @media (max-width: 800px) { .cards { grid-template-columns: 1fr; } }
+      .card { border:1px solid #e6e6e6; border-radius:12px; padding:12px; background:#fff; }
+      h2 { margin:.2rem 0 .6rem; }
+      code.badge { font-size:1rem; padding:.15rem .45rem; border:1px solid #ccc; border-radius:6px; background:#f4f4f4; }
+    </style>
+  </head>
+  <body>
+    <h1>ShareLab — MVP Offline</h1>
+    <p class="muted">Tudo roda <strong>100% no navegador</strong>. Nenhum dado sai do seu PC.</p>
+
+    <div class="row">
+      <input id="pdfInput" type="file" accept="application/pdf" />
+      <button id="btnLimpar">Limpar</button>
+      <span class="muted">Máx. 30 páginas por arquivo no MVP.</span>
+    </div>
+
+    <div class="cards" style="margin-top:12px;">
+      <div class="card">
+        <h2>Texto extraído</h2>
+        <pre id="outText">—</pre>
+      </div>
+      <div class="card">
+        <h2>JSON (estrutura simples)</h2>
+        <pre id="outJSON">—</pre>
+      </div>
+    </div>
+
+    <p class="muted">Próximos passos: regras de parsing por laboratório, anonimização e compartilhamento P2P (WebRTC).</p>
+
+    <script type="module" src="js/paciente.js"></script>
+  </body>
+</html>
